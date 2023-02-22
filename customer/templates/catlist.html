@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%block body%}
+<style>
+    body{
+        background-image: url(../static/images/onlinesell.jpg);
+    }
+</style>
+<div class="container">
+    {%if messages%}
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            {%for msg in messages%}
+            
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{msg}}!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {%endfor%}
+        </div>
+        <div class="col-4"></div>
+    </div>
+    {%endif%}
+</div>
+<section class="py-5" >
+    <div class="container px-4 px-lg-5 mt-5" style="height: 600px;">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {%for cat in cat%}
+            <a href="{%url 'addproduct' cat.id%}" class="btn btn-primary mb-3 me-3" style="height: 100px;width: 200px;padding-top: 40px;">{{cat.name}}</a>
+            {%endfor%}
+        </div>
+    </div>
+</section>
+
+{%endblock%}

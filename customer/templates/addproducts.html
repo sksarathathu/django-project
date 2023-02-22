@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container" style="height: 700px;align-items: center;">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" method="post">
+                {%csrf_token%}
+                <div class="mb-3 mt-5"><input type="text" class="form-control" name="name" id="id_name" placeholder="product name"></div>
+                <div class="mb-3"><input type="text" class="form-control" name="description" id="id_description" placeholder="description"></div>
+                <div class="mb-3"><input type="text" class="form-control" name="condition" id="id_condition" placeholder="condition"></div>
+                <div class="mb-3"><input type="text" class="form-control" name="location" id="id_location" placeholder="location"></div>
+                <div class="mb-3"><input type="text" class="form-control" name="price" id="id_price" placeholder="price"></div>
+              
+                <div><button class="btn btn-primary mt-3 form-control" type="submit">Add Product</button></div>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+{%endblock%}

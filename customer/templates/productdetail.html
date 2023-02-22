@@ -1,0 +1,136 @@
+{%extends 'base.html'%}
+
+
+{%block body%}
+<style>
+    .card-sl {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card-image img {
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 8px 8px 0px 0;
+    }
+
+    .card-action {
+        position: relative;
+        float: right;
+        margin-top: -25px;
+        margin-right: 20px;
+        z-index: 2;
+        color: #E26D5C;
+        background: #fff;
+        border-radius: 100%;
+        padding: 15px;
+        font-size: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card-action:hover {
+        color: #fff;
+        background: #E26D5C;
+        -webkit-animation: pulse 1.5s infinite;
+    }
+
+    .card-heading {
+        font-size: 18px;
+        font-weight: bold;
+        background: #fff;
+        padding: 10px 15px;
+    }
+
+    .card-text {
+        padding: 10px 15px;
+        background: #fff;
+        font-size: 14px;
+        color: #636262;
+    }
+
+    .card-button {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        width: 100%;
+        background-color: #1F487E;
+        color: #fff;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .card-button:hover {
+        text-decoration: none;
+        background-color: #1D3461;
+        color: #fff;
+
+    }
+
+
+    @-webkit-keyframes pulse {
+        0% {
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+
+        70% {
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+        }
+
+        100% {
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+            box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+        }
+    }
+</style>
+
+<!-- card -->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5" style="height: 600px;">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="card-sl mb-3">
+                <div class="card-image">
+                    <img
+                        src="https://dummyimage.com/300.png/09f/fff" />
+                </div>
+            
+                <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
+                <div class="card-heading">
+                    {{product.name}} 
+                </div>
+                <div class="card-text">
+                   category: <strong>{{product.category.name}}</strong>
+                </div>
+                <div class="card-text">
+                    <strong>{{product.description}} </strong>
+                 </div>
+                <div class="card-text">
+                  condition:  <strong>{{product.condition}}</strong>
+                </div>
+                <div class="card-text">
+                    place:  <strong>{{product.location}}</strong>
+                  </div>
+                <div class="card-text">
+                  price:  <strong>${{product.price}}</strong>
+                </div>
+                <div class="card-text">
+                   posted on: <strong>{{product.date}}</strong>
+                </div>
+                <a href="{%url 'checkout' product.id%}" class="card-button nav-link">Buy</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+
+{%endblock%}

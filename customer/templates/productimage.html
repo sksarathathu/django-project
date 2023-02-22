@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container" style="height: 650px;">
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" method="post">
+                {%csrf_token%}
+                 image:<input type="file" accept="image/" name="image" id="id_image">
+                <button type="submit" class="mt-5">Add image</button>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+
+{%endblock%}

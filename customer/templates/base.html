@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="{%static 'assets/favicon.ico'%}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{%static 'css/basestyles.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body style="background-color: #cce6ff;">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand " style="font-family:fantasy; color: rgb(0, 146, 146);" href="#!">
+                <h1> NowSell</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 mt-4">
+                    <li class="nav-item "><a class="nav-link active" aria-current="page" href="{%url 'home'%}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="{%url 'addedproduct'%}">myProduct</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">filter</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{%url 'addcat'%}">Add category</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="{%url 'mobiles'%}">Mobiles</a></li>
+                            <li><a class="dropdown-item" href="{%url 'cars'%}">Cars</a></li>
+                            <li><a class="dropdown-item" href="#!">Bikes</a></li>
+                            <li><a class="dropdown-item" href="#!">Houses</a></li>
+
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item ms-2">
+                        <form action="">
+                            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                                <div class="input-group">
+                                    <input type="search" placeholder="Search...." aria-describedby="button-addon1"
+                                        class="form-control rounded-pill border-0 bg-light" style="">
+                                    <div class="input-group-append">
+                                        <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i
+                                                class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+
+                <a class="btn rounded-pill" href="{%url 'catlist'%}" style="
+                display: inline-block;
+                outline: 0;
+                border: 0;
+                cursor: pointer;
+                font-size: 30px;
+                text-decoration: none;
+                line-height: 1;
+                position: relative;
+                padding: 10px;
+                background: #1abebf;
+                background-image: linear-gradient(122deg,#37e0e0,#1abebe);
+                background-size: 300px,300px,100%;
+                color: #fff;
+                border-bottom: 5px solid #ffc600;
+                box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
+                text-shadow: 0 0 3px rgb(0 0 0 / 30%);
+                transition: all .3s;
+                border-radius: 4px
+               
+                "><i class="fa fa-plus"></i> Sell</a>
+
+                <form class="d-flex ms-3">
+                    <a class="" href="{%url 'profile'%}">
+                        <img src="../static/images/propic1.png" class="rounded-circle btn-outline-info img-fluid"
+                            style="width: 100px; " />
+                    </a>
+                </form>
+
+            </div>
+
+        </div>
+    </nav>
+    <div class="container">
+        {%block body%}
+
+        {%endblock%}
+    </div>
+    <footer class="py-5" style="background-color: #000033;">
+        <p class="m-0 text-center text-white">All rights reserved &copy; NowSell 2023</p>
+        <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+            <span><i class="fa fa-twitter" style="color: white;"></i></span>
+            <span><i class="fa fa-facebook-f" style="color: white;"></i></span>
+            <span><i class="fa fa-instagram" style="color: white;"></i></span> <span>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{%static 'js/scripts.js'%}"></script>
+
+</body>
+
+</html>

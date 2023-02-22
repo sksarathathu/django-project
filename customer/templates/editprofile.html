@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container" style="height: 700px;align-items: center;">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" method="post">
+                {%csrf_token%}
+                <div class="mb-3 mt-5"><input type="text" class="form-control" style="height: 50px;" name="bio" id="id_bio" placeholder="edit bio"></div>
+                <div class="mb3">profile pic: <input type="file" accept="image/*" name="pic" id="id_pic"></div>
+                <div><button class="btn btn-primary mt-3 form-control" type="submit">Save</button></div>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+{%endblock%}
